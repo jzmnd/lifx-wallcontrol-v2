@@ -24,7 +24,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jzmnd/lifx-wallcontrol-v2.git"
-  }
   },
   "author": "Jeremy Smith",
   "license": "MIT"
