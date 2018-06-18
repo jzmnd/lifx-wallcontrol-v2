@@ -13,15 +13,22 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]}
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     output: {
-        filename: 'transformed.js',
-        path: path.resolve(__dirname, 'build')
+        filename: 'index_bundle.js',
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/'
     },
     plugins: [HTMLWebpackPluginConfig]
 };

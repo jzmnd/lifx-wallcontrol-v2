@@ -1,11 +1,24 @@
-var React = require('react');
+import React, { Component }  from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-class App extends React.Component {
+import Lights from './Lights';
+import Stats from './Stats';
+import About from './About';
+import NotFound from './NotFound';
+
+import "./App.css";
+
+class App extends Component {
     render() {
         return(
-            <div>Hello World!</div>
+            <Router>
+                <Route exact path='/' component={Lights} />
+                <Route path='/stats' component={Stats} />
+                <Route path='/about' component={About} />
+                <Route path='*' component={NotFound} />
+            </Router>
         );
     }
 };
 
-module.exports = App;
+export default App;
